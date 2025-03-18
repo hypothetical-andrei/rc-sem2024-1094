@@ -1,0 +1,20 @@
+services:
+  python-dev:
+    container_name: python-dev
+    build: .
+    volumes:
+      - .:/app  # Mount the project directory
+    working_dir: /app
+    networks:
+      py_ipv6_network:
+        ipv6_address: 2001:db8:1::20
+    environment:
+      - PYTHONUNBUFFERED=1  # Ensures real-time logging
+    command: ["tail", "-f", "/dev/null"]  # Keeps the container running
+networks:
+  py_ipv6_network:
+    enable_ipv6: true
+    ipam:
+      driver: default
+      config:
+        - subnet: 2001:db8:1::/64
