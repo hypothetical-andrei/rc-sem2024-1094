@@ -1,7 +1,7 @@
 import socket
 
 ANYCAST_ADDR = "::"  # Simulated anycast address
-PORT = 5007
+PORT = 9999
 
 def anycast_server():
     """Simulated IPv6 anycast server."""

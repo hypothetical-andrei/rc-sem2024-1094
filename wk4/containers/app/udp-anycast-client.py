@@ -1,7 +1,7 @@
 import socket
 # sudo ip -6 addr add 2001:db8::1/64 dev lo
 ANYCAST_ADDR = "2001:db8:1::20"  # Simulated anycast address
-PORT = 5007
+PORT = 9999
 
 def anycast_client():
     """Send a message to the anycast address."""
