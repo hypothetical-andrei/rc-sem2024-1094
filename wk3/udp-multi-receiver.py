@@ -4,7 +4,7 @@ import struct
 MCAST_GROUP = '224.0.0.1'
 MCAST_PORT = 9999
 
-server_address = (MCAST_GROUP, MCAST_PORT)
+server_address = ('', MCAST_PORT)
 
 receiver_socket = socket.socket(socket.AF_INET, socket.SOCK_DGRAM, socket.IPPROTO_UDP)
 receiver_socket.bind(server_address)
@@ -16,4 +16,3 @@ receiver_socket.setsockopt(socket.IPPROTO_IP, socket.IP_ADD_MEMBERSHIP, multicas
 while True:
   data, address = receiver_socket.recvfrom(1024)
   print(f'received {data} from {address}')
-
